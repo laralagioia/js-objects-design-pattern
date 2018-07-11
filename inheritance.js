@@ -15,18 +15,30 @@ Object.defineProperty(task, 'toString', {
     value: function() {
         return this.title + ' ' + this.description;
     },
-    writable: true,
-    enumerable: true,
+    writable: false,
+    enumerable: false,
     configurable: true
 });
 
 console.log(task.toString());
 
 
-//if enumerable is false, toString won't show
+//if enumerable is false, toString won't be shown
 console.log(Object.keys(task));
 
 //if configurable is false, it won't perform the following change
 Object.defineProperty(task, 'toString', {
     configurable: false
 });
+
+var urgentTask = Object.create(task);
+Object.defineProperty(urgentTask, 'toString', {
+    value: function() {
+        return this.title + ' is urgent';
+    },
+    writable: false,
+    enumerable: false,
+    configurable: true
+});
+
+console.log(urgentTask.toString());
