@@ -1,0 +1,20 @@
+*********
+OBSERVER
+*********
+- Observe task and watch for changes
+
+
+*********
+MEDIATOR
+*********
+- Allows for loosely coupled system
+- One object manage all communication
+
+
+*********
+COMMAND
+*********
+- Fully decouples the execution from the implementation
+- Less fragile implementation
+- Support undo operations
+- Supports auditing and logging opperation
